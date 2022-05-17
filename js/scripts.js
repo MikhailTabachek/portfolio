@@ -6,6 +6,8 @@
 //
 // Scripts
 // 
+const backToTopButton = document.getElementById("nav-top-hide")
+
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -16,9 +18,11 @@ window.addEventListener('DOMContentLoaded', event => {
             return;
         }
         if (window.scrollY === 0) {
+            // backToTopButton.setAttribute('hidden')
             navbarCollapsible.classList.remove('navbar-shrink')
         } else {
             navbarCollapsible.classList.add('navbar-shrink')
+            backToTopButton.removeAttribute('hidden')
         }
 
     };
@@ -40,6 +44,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
+
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
